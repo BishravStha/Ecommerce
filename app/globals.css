@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 55, 55, 55; /* Dark gray text color */
+  --background-start-rgb: 255, 255, 255; /* White background */
+  --background-end-rgb: 240, 240, 240;   /* Lighter gray */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 230, 230, 230; /* Light gray text color for dark mode */
+    --background-start-rgb: 30, 30, 30; /* Dark gray background */
+    --background-end-rgb: 50, 50, 50;   /* Slightly lighter dark gray */
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-gradient-custom {
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+  }
+
+  .shadow-elevate {
+    box-shadow: 0 4px 8px rgba(var(--foreground-rgb), 0.2);
+  }
+
+  .transition-transform {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .transition-opacity {
+    transition: opacity 0.3s ease-in-out;
+  }
+}
